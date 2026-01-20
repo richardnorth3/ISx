@@ -1,8 +1,9 @@
-CC = oshcc
+#CC = oshcc #OpenSHMEM
+CC = cc #CraySHMEM
 LD = $(CC)
 DEBUGFLAGS = -g -p -O0 -DDEBUG
 OPTFLAGS = -O3 -DNDEBUG -mavx
-CFLAGS += -Wall -Wextra -std=c99 #$(OPTFLAGS)
+CFLAGS += -Wall -Wextra -std=c99 -D_POSIX_C_SOURCE=199309L $(OPTFLAGS)
 LDLIBS += -lrt -lm
 LDFLAGS += 
 ### 
